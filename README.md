@@ -1,8 +1,6 @@
 <h2>Description</h2>
 
-A school management system with registered user and admin roles, in addition to unregistered user. Functionality for viewing and searching schools as well as registering pupils and making requests for them to join specific schools on the user side and adding, removing and updating schools, as well as confirming requests, on the admin side.
-
-Pupil's date of birth automatically extracted from his/her personal ID code, appropriately formatted and stored on the database.
+A hotel management system with registered user and admin roles, in addition to unregistered user. UI in lithuanian. Functionality for viewing, searching and booking hotels on the user side and adding, removing and updating hotels, as well as confirming orders, on the admin side.
 
 React.js used for frontend and Laravel for backend. Used token-based authentication with sanctum, in addition to protected routes on the frontend.
 
@@ -11,7 +9,6 @@ This is the backend repository. You can access the frontend repository <a href =
 <h2>Instructions for launch</h2>
 
 <h2>Functionality</h2>
-
 
 <ul>
     <li>User roles:<li>
