@@ -31,10 +31,11 @@ class ordersController extends Controller
             "user_id"=>"required",
         ]);
 
-        $newReservation = HotelsUser::firstOrCreate(
-            ['hotels_id' => $request->hotels_id],
-            ['user_id' => $request->user_id]
+        $newReservation = HotelsUser::firstOrNew(
+            ['hotels_id' => $request->hotels_id, 'user_id' => $request->user_id],
         );
+
+        $newReservation->save();
     }
 
     public function confirmReservation($id)
@@ -46,7 +47,7 @@ class ordersController extends Controller
 
     public function getReservations(Request $request, $userid)
     {
-        $queryresults = DB::table('hotels_user')->where('user_id', '=', $userid)->get();
+        $queryresults = HotelsUser::with('hotels')->where('user_id', '=', $userid)->get();
         return $queryresults;
     }
 

@@ -44,6 +44,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $attributes = [
+        'role' => 'user'
+    ];
+
     public function hotels() {
         return $this->belongsToMany(Hotels::class);
     }

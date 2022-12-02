@@ -44,7 +44,7 @@ Route::put('/updatehotel', [hotelsController::class, 'updateHotel']);
 
 Route::get('/orders', [ordersController::class, 'showAllOrders']);
 
-Route::post('/addreservation', [ordersController::class, 'addReservation']);
+Route::post('/addreservation', [ordersController::class, 'addReservation'])->middleware('auth:sanctum', 'abilities:user-abilities');
 
 Route::put('/confirmreservation/{id}', [ordersController::class, 'confirmReservation']);
 
@@ -55,6 +55,8 @@ Route::get('/search', [hotelsController::class, 'searchHotels']);
 Route::post('/register', [authorizationController::class, 'register']);
 
 Route::post('/login', [authorizationController::class, 'login']);
+
+Route::post('/logout', [authorizationController::class, 'logout'])->middleware('auth:sanctum', 'abilities:user-abilities');
 
 
 // Route::post('/addevaluation', [mealsController::class, 'addEvaluation', 'abilities:user-abilities']);

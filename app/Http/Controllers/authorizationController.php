@@ -37,12 +37,17 @@ class authorizationController extends Controller
 
         $user = User::where('email', $fields['email'])->first();
 
+        // return response (['user'=>$user, 'token' => $user->createToken('appToken', ['user-abilities'])->plainTextToken]);
+
         if ($user && Auth::attempt(['email' => $fields['email'], 'password' => $fields['password']])) {
             if ($user->role === "user")
                 return response (['user'=>$user, 'token' => $user->createToken('appToken', ['user-abilities'])->plainTextToken]);
+                // return "user";
 
             if ($user->role === "admin")
                 return response (['user'=>$user, 'token' => $user->createToken('appToken', ['admin-abilities'])->plainTextToken]);
+                // return "admin";
+
         }
     }
 
