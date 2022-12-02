@@ -2,7 +2,7 @@
 
 A school management system with registered user and admin roles, in addition to unregistered user. Functionality for viewing and searching schools as well as registering pupils and making requests for them to join specific schools on the user side and adding, removing and updating schools, as well as confirming requests, on the admin side.
 
-Pupil's date of birth automatically extracted, appropriately formatted and stored on the database from the pupil's personal ID code.
+Pupil's date of birth automatically extracted from his/her personal ID code, appropriately formatted and stored on the database.
 
 React.js used for frontend and Laravel for backend. Used token-based authentication with sanctum, in addition to protected routes on the frontend.
 
